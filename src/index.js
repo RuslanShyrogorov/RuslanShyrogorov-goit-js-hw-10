@@ -20,28 +20,37 @@ function createMarkupList(country) {
   const markup = country
     .map(({ name, flags }) => {
       return `
-      <li>
-        <img  src="${flags.svg}" width="30" alt="flag of ${name.common}"/><span >${name.official}</span>
+      <li class = "country-list-item">
+        <img class="imges" src="${flags.svg}" width="30" alt="flag of ${name.common}"/><span class="country-list__span">${name.official}</span>
       </li>`;
     }).join('');
   countryList.innerHTML = markup;
 }
 
+// function createMarkupItem([{ name, capital, population, flags, languages }]) {
+//   const markupItem = `
+//   <div>
+//       <img src="${flags.svg}" width="30" alt='${name.common}'>
+//       <h1 class="title>${name.official}</h1>
+//       <p class="text">'Capital: ${capital}'</p>
+//       <p class="text">'Population: ${population}'</p>
+//       <p class="text">'Languages: ${Object.values(languages).join(', ')}'</p>
+//   </div>`;
+//   countryOneInfo.innerHTML = markupItem;
+// }
 function createMarkupItem([{ name, capital, population, flags, languages }]) {
   const markupItem = `
-  <div>
-      <img src="${flags.svg}" width="30" alt='${name.common}'>
-      <h1>${name.official}</h1>
-      <p>'Capital: ${capital}'</p>
-      <p>'Population: ${population}'</p>
-      <p>'Languages: ${Object.values(languages).join(', ')}'</p>
-  </div>`;
+    <img class="imges" src="${flags.svg}" width="40" alt="flag of ${name.common}"/><span class="imges-span">${name.official}</span>
+    <p class="text">Capital: <span class = "text-span">${capital}</span></p>
+    <p class="text">Population: <span class = "text-span">${population}</span></p>
+    <p class="text">Languages: <span class = "text-span">${Object.values(languages).join(', ')}</span></p>`;
   countryOneInfo.innerHTML = markupItem;
 }
 
 function handlerInput() {
   let userInfo = inputEl.value.trim();
   if (userInfo === '') {
+    // Notify.failure('Enter a search value');
   } else {
     fetchCountries(userInfo)
       .then(country => {

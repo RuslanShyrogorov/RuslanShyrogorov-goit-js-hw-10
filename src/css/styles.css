@@ -18,3 +18,42 @@ body {
   max-width: 320px;
   margin-bottom: 16px;
 }
+
+.country-list__span {
+  margin-left: 10px;
+  font-weight: 500;
+  text-align: center;
+}
+
+.country-list {
+  list-style: none;
+}
+
+.imges {
+  vertical-align: middle;
+}
+
+.country-list-item:not(:last-child) {
+  margin-bottom: 7px;
+}
+
+.title {
+  font-weight: 700;
+}
+
+.text-span {
+  font-weight: 500;
+}
+
+.imges-span {
+  margin-left: 10px;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 30px;
+  vertical-align: middle;
+}
+
+.text {
+  font-weight: 700;
+  font-size: 20px;
+}
